@@ -5,12 +5,12 @@ export function Story() {
   return (
     <section id="story" className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28">
       <Reveal>
-        <p className="kicker text-center">Хроніка</p>
+        <p className="kicker text-center">Хроника</p>
         <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-5xl">
-          Розділи нас
+          Главы нашей истории
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center font-serif text-lg italic text-ink-soft">
-          Не вигадана біографія — лише ті двері, які я можу назвати напевно.
+          Не выдуманная биография — только те двери, которые я могу назвать наверняка.
         </p>
       </Reveal>
 
