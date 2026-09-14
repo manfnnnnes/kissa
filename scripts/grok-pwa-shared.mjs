@@ -410,7 +410,7 @@ export function normalizeHeadContext(ctx = {}) {
     ctx.site !== undefined ? ctx.site : snapshotOgIdentity(cwd).site,
     cwd,
   );
-  const appName = resolveOgTitle(site, ctx.appName ?? DEFAULT_APP_NAME, ctx.host ?? "");
+  const appName = String(ctx.appName ?? "").trim() || appNameFromHost(ctx.host ?? "");
   return {
     appName,
     projectId: ctx.projectId ?? readGrokProjectId(),
