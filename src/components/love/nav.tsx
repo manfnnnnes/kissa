@@ -54,9 +54,9 @@ export function SiteNav() {
           )}
         >
           <HeartMark className="size-4" />
-          <span className="font-serif text-lg tracking-tight">Для коханої</span>
+          <span className="font-serif text-lg tracking-tight">Для любимой</span>
         </a>
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Розділи">
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Разделы">
           {NAV.map((item) => (
             <a
               key={item.id}
