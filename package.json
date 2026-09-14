@@ -1,8 +1,10 @@
 {
-  "name": "app-builder-workspace",
+  "name": "kissa",
+  "version": "1.0.0",
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": { "node": ">=22" },
   "overrides": {
     "nf3": "0.3.17"
   },
