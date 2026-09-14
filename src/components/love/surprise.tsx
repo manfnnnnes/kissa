@@ -17,7 +17,7 @@ export function Surprise() {
       <div className="absolute inset-0 bg-ink/75" />
       <div className="relative mx-auto max-w-xl px-5 text-center">
         <Reveal>
-          <p className="kicker text-rose-soft">Для тебе</p>
+          <p className="kicker text-rose-soft">Для тебя</p>
           <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight text-ivory sm:text-5xl">
             Сюрприз
           </h2>
@@ -37,7 +37,7 @@ export function Surprise() {
                 !open && "hover:-translate-y-1 active:scale-[0.96]",
                 open && "pointer-events-none opacity-0",
               )}
-              aria-label="Відкрити конверт"
+              aria-label="Открыть конверт"
             >
               <span className="absolute inset-x-0 bottom-0 h-24 rounded-sm bg-cream shadow-lift" />
               <span className="envelope-flap absolute inset-x-0 top-2 h-20 origin-top rounded-sm bg-ivory shadow-soft" />
