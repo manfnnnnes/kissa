@@ -32,11 +32,11 @@ export function Gallery() {
         <Reveal>
           <p className="kicker text-center text-rose">Атмосфера</p>
           <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-5xl">
-            Світло, в якому я тебе бачу
+            Свет, в котором я тебя вижу
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center font-serif text-lg italic text-rose-soft">
-            Це не наші знімки. Це колір днів, якими я тебе пам’ятаю — поки ми не
-            вставимо сюди свої.
+            Это не наши фотографии. Это цвет дней, которыми я тебя помню — пока мы не
+            вставим сюда свои.
           </p>
         </Reveal>
 
@@ -75,7 +75,7 @@ export function Gallery() {
             type="button"
             className="absolute right-4 top-4 rounded-full bg-ivory/10 p-3 text-ivory transition-colors hover:bg-ivory/20"
             onClick={() => setOpen(null)}
-            aria-label="Закрити"
+            aria-label="Закрыть"
           >
             <X className="size-5" />
           </button>
@@ -86,7 +86,7 @@ export function Gallery() {
               e.stopPropagation();
               setOpen((open - 1 + GALLERY.length) % GALLERY.length);
             }}
-            aria-label="Попереднє"
+            aria-label="Предыдущее"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -110,7 +110,7 @@ export function Gallery() {
               e.stopPropagation();
               setOpen((open + 1) % GALLERY.length);
             }}
-            aria-label="Наступне"
+            aria-label="Следующее"
           >
             <ChevronRight className="size-5" />
           </button>
