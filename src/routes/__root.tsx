@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Для коханої";
+const APP_NAME = "Для любимой";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#7A2E3A" },
       {
         name: "description",
-        content: "Історія нашого кохання в кожній секунді — лист для коханої дружини.",
+        content: "История нашей любви в каждой секунде — письмо для любимой жены.",
       },
     ],
     links: [
@@ -35,7 +35,7 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   return (
-    <html lang="uk" className="antialiased" suppressHydrationWarning>
+    <html lang="ru" className="antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
