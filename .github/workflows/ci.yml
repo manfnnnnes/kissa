@@ -41,6 +41,33 @@ jobs:
           git commit -m 'chore: синхронизировать package-lock.json'
           git push
 
+      - name: Исправить resolver OG title
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/grok-pwa-shared.mjs')
+          text = path.read_text()
+          old = '  const appName = resolveOgTitle(site, ctx.appName ?? DEFAULT_APP_NAME, ctx.host ?? "");'
+          new = '  const appName = String(ctx.appName ?? "").trim() || appNameFromHost(ctx.host ?? "");'
+          if old in text:
+              path.write_text(text.replace(old, new, 1))
+          PY
+
+      - name: Сохранить исправление OG title
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          if git diff --quiet -- scripts/grok-pwa-shared.mjs; then
+            echo 'OG title resolver уже исправлен.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/grok-pwa-shared.mjs
+          git commit -m 'fix: исправить resolver OG title'
+          git push
+
       - name: Установить зависимости
         run: npm ci --ignore-scripts --no-audit --no-fund
 
