@@ -12,15 +12,15 @@ export function Letter() {
       <div className="absolute inset-0 bg-cream/80" />
       <div className="relative mx-auto max-w-2xl px-5 sm:px-6">
         <Reveal>
-          <p className="kicker text-center">Від руки</p>
+          <p className="kicker text-center">От руки</p>
           <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-5xl">
-            Лист, який я кладу тобі в серце
+            Письмо, которое я кладу тебе в сердце
           </h2>
         </Reveal>
         <Reveal delay={80}>
           <article className="paper-card mt-10 rounded-2xl px-6 py-10 sm:px-12 sm:py-14">
             <p className="font-serif text-sm tracking-[0.2em] uppercase text-wine">
-              Кохана
+              Любимая
             </p>
             <div className="mt-6 space-y-5 font-serif text-lg leading-relaxed text-ink-soft sm:text-xl">
               {LETTER_PARAS.map((p) => (
@@ -28,7 +28,7 @@ export function Letter() {
               ))}
             </div>
             <p className="mt-10 text-right font-serif text-xl italic text-wine">
-              Твій чоловік
+              Твой муж
             </p>
           </article>
         </Reveal>
