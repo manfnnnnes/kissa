@@ -17,18 +17,18 @@ export function Hero() {
         <div className="mb-6 flex justify-center">
           <HeartMark className="heart-pulse size-8 text-rose-soft" />
         </div>
-        <p className="kicker text-rose-soft">З 22 серпня 2020</p>
+        <p className="kicker text-rose-soft">С 22 августа 2020 года</p>
         <h1 className="mt-4 font-serif text-4xl font-medium leading-[1.1] tracking-tight text-ivory sm:text-6xl md:text-7xl">
-          Для моєї коханої дружини
+          Для моей любимой жены
         </h1>
         <p className="mx-auto mt-5 max-w-lg font-serif text-lg italic text-rose-soft sm:text-2xl">
-          Історія нашого кохання — у кожній секунді
+          История нашей любви — в каждой секунде
         </p>
         <a
           href="#time"
           className="mt-10 inline-flex flex-col items-center gap-1 text-ivory/80 transition-colors duration-200 hover:text-ivory"
         >
-          <span className="text-xs tracking-[0.2em] uppercase">Далі</span>
+          <span className="text-xs tracking-[0.2em] uppercase">Дальше</span>
           <ChevronDown className="size-5 animate-bounce" strokeWidth={1.5} />
         </a>
       </div>
