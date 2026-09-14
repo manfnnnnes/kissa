@@ -12,12 +12,12 @@ export function Notes() {
     <section id="notes" className="bg-cream py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Reveal>
-          <p className="kicker text-center">У шухляді</p>
+          <p className="kicker text-center">В ящике</p>
           <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-5xl">
-            Сім записок
+            Семь записок
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center font-serif text-lg italic text-ink-soft">
-            На випадок, якщо мене немає поруч, а тобі треба почути мій голос.
+            На случай, если меня нет рядом, а тебе нужно услышать мой голос.
           </p>
         </Reveal>
 
