@@ -1,0 +1,38 @@
+name: Проверка
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Получить исходники
+        uses: actions/checkout@v4
+
+      - name: Установить Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Установить зависимости
+        run: npm ci
+
+      - name: Проверить TypeScript
+        run: npm run typecheck
+
+      - name: Проверить ESLint
+        run: npm run lint
+
+      - name: Запустить тесты
+        run: npm test
+
+      - name: Проверить production-сборку
+        run: npm run build
