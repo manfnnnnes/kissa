@@ -10,12 +10,12 @@ export function Reasons() {
   return (
     <section id="reasons" className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28">
       <Reveal>
-        <p className="kicker text-center">Не повний список</p>
+        <p className="kicker text-center">Не полный список</p>
         <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight sm:text-5xl">
-          Чому я обираю тебе знову
+          Почему я снова выбираю тебя
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center font-serif text-lg italic text-ink-soft">
-          Вісім з тисячі. Решту я говоритиму тобі вголос — поки вистачить життя.
+          Восемь из тысячи. Остальное я буду говорить тебе вслух — пока хватит жизни.
         </p>
       </Reveal>
 
@@ -56,7 +56,7 @@ export function Reasons() {
                     </span>
                     {!isOpen ? (
                       <span className="mt-1 block text-xs tracking-wide text-muted">
-                        Відкрити
+                        Открыть
                       </span>
                     ) : null}
                   </span>
