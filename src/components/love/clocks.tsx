@@ -71,7 +71,7 @@ function ClockFace({
 }
 
 function formatInt(n: number) {
-  return new Intl.NumberFormat("uk-UA").format(n);
+  return new Intl.NumberFormat("ru-RU").format(n);
 }
 
 export function Clocks() {
@@ -84,29 +84,29 @@ export function Clocks() {
   return (
     <section id="time" className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28">
       <Reveal>
-        <p className="kicker text-center">Живий рахунок</p>
+        <p className="kicker text-center">Живой отсчёт</p>
         <h2 className="mt-3 text-center font-serif text-3xl font-medium tracking-tight text-ink sm:text-5xl">
-          Час, який належить нам
+          Время, которое принадлежит нам
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center font-serif text-lg italic text-ink-soft">
-          Цифри змінюються щосекунди — так само, як і те, як я тебе кохаю: більше,
-          ніж учора.
+          Цифры меняются каждую секунду — так же, как и моя любовь к тебе: сильнее,
+          чем вчера.
         </p>
       </Reveal>
 
       <div className="mt-10 grid gap-5">
         <Reveal>
           <ClockFace
-            kicker="З першого дня"
-            title="Ми разом уже"
+            kicker="С самого начала"
+            title="Мы вместе уже"
             from={START_DATE}
             now={now}
           />
         </Reveal>
         <Reveal delay={80}>
           <ClockFace
-            kicker="З 22 травня 2026"
-            title="У шлюбі — назавжди"
+            kicker="С 22 мая 2026 года"
+            title="В браке — навсегда"
             from={MARRIAGE_DATE}
             now={now}
           />
@@ -119,17 +119,17 @@ export function Clocks() {
             {
               n: formatInt(daysTogether),
               l: unitLabel("days", daysTogether),
-              s: "світанків поруч",
+              s: "рассветов рядом",
             },
             {
               n: formatInt(daysMarried),
               l: unitLabel("days", daysMarried),
-              s: "у шлюбі",
+              s: "в браке",
             },
             {
               n: formatInt(heartbeats),
-              l: "ударів",
-              s: "серця, поки я думаю про тебе",
+              l: "ударов",
+              s: "сердца, пока я думаю о тебе",
             },
           ].map((stat) => (
             <li
