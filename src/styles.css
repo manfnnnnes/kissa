@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f6efe6;
+  --color-cream: #ede4d8;
+  --color-paper: #fbf6ef;
+  --color-ink: #2a1a16;
+  --color-ink-soft: #5c433c;
+  --color-muted: #8a7068;
+  --color-wine: #7a2e3a;
+  --color-wine-deep: #5c1f2b;
+  --color-rose: #c9898c;
+  --color-rose-soft: #e2c4c2;
+  --color-line: #e4d4c8;
+  --color-gold: #b08968;
+
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-soft: 0 12px 40px rgba(42, 26, 22, 0.08);
+  --shadow-lift: 0 18px 50px rgba(42, 26, 22, 0.12);
+  --z-index-overlay: 80;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-serif);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-rose-soft);
+    color: var(--color-wine-deep);
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.09;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(42, 26, 22, 0.55) 0.6px, transparent 0.7px);
+  background-size: 3px 3px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(6px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-wine);
+}
+
+.paper-card {
+  background: var(--color-paper);
+  border: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.wax-seal {
+  background:
+    radial-gradient(circle at 30% 30%, #c45a63, #7a2e3a 62%, #5c1f2b 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 6px 16px rgba(92, 31, 43, 0.28);
+}
+
+@keyframes pulse-heart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.heart-pulse {
+  animation: pulse-heart 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.envelope-flap {
+  clip-path: polygon(0 0, 50% 70%, 100% 0);
+}
+
+.lightbox {
+  z-index: 80;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(var(--drift, 12px), 108vh, 0) rotate(260deg);
+    opacity: 0.15;
+  }
+}
+
+.petal {
+  position: absolute;
+  top: -24px;
+  border-radius: 80% 0 70% 0;
+  opacity: 0.5;
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.petal-wine {
+  background: var(--color-wine);
+}
+
+.petal-rose {
+  background: var(--color-rose);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .heart-pulse {
+    animation: none;
+  }
+
+  .animate-bounce {
+    animation: none;
+  }
+
+  .petal {
+    animation: none;
+    display: none;
+  }
+}

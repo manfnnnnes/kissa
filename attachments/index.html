@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для моєї коханої дружини ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+            color: #4a4a4a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            color: #d11a2a;
+            font-size: 2.2rem;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 25px;
+        }
+        .heart-main {
+            color: #e63946;
+            font-size: 55px;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+        /* Стилі для таймерів */
+        .timer-section {
+            background: #fff5f5;
+            border-left: 4px solid #e63946;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .timer-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        .timer-item {
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .timer-num {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e63946;
+        }
+        .timer-label {
+            font-size: 0.75rem;
+            color: #777;
+            text-transform: uppercase;
+        }
+        /* Текстовий блок та галерея */
+        .love-letter {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 25px 0;
+            text-align: justify;
+            border-top: 1px inset #ffe6e6;
+            padding-top: 20px;
+        }
+        .photo-placeholder {
+            background: #fdf2f4;
+            border: 2px dashed #ffb3b3;
+            border-radius: 12px;
+            padding: 40px 20px;
+            margin: 20px 0;
+            color: #b37373;
+            font-style: italic;
+        }
+        /* Кнопка сюрпризу */
+        .btn {
+            background: linear-gradient(135deg, #e63946, #ff4d6d);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+        }
+        #surprise-text {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff0f3;
+            border-radius: 12px;
+            font-weight: bold;
+            color: #d11a2a;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart-main">❤️</div>
+        <h1>Для моєї коханої дружини</h1>
+        <p class="subtitle">Історія нашого кохання в кожній секунді...</p>
+
+        <!-- ТАЙМЕР 1: Початок стосунків -->
+        <div class="timer-section">
+            <div class="timer-title">🌱 Ми разом уже:</div>
+            <div class="timer-grid" id="relationship-timer">
+                <div class="timer-item"><div class="timer-num" id="r-days">0</div><div class="timer-label">Днів</div></div>
+                <div class="timer-item"><div class="timer-num" id="r-hours">0</div><div class="timer-label">Год</div></div>
+                <div class="timer-item"><div class="timer-num" id="r-mins">0</div><div class="timer-label">Хв</div></div>
+                <div class="timer-item"><div class="timer-num" id="r-secs">0</div><div class="timer-label">Сек</div></div>
+            </div>
+        </div>
+
+        <!-- ТАЙМЕР 2: Шлюб -->
+        <div class="timer-section">
+            <div class="timer-title">💍 У шлюбі (назавжди):</div>
+            <div class="timer-grid" id="marriage-timer">
+                <div class="timer-item"><div class="timer-num" id="m-days">0</div><div class="timer-label">Днів</div></div>
+                <div class="timer-item"><div class="timer-num" id="m-hours">0</div><div class="timer-label">Год</div></div>
+                <div class="timer-item"><div class="timer-num" id="m-mins">0</div><div class="timer-label">Хв</div></div>
+                <div class="timer-item"><div class="timer-num" id="m-secs">0</div><div class="timer-label">Сек</div></div>
+            </div>
+        </div>
+
+        <!-- Лист коханій -->
+        <div class="love-letter">
+            Кохана, дивитися на ці цифри — чисте щастя. Кожен день, кожна година і кожна секунда поруч із тобою — це найкраще, що відбувалося у моєму житті. Дякую тобі за твою ніжність, турботу та за те, що робиш наш дім найтеплішим місцем на землі. Я неймовірно радий бути твоїм чоловіком!
+        </div>
+
+        <!-- Порада: сюди можна буде легко вставити ваше спільне фото -->
+        <div class="photo-placeholder">
+            📸 [Тут може бути ваше найкраще спільне фото або весільний знімок]
+        </div>
+
+        <button class="btn" onclick="showSurprise()">Натисни для сюрпризу ✨</button>
+        <div id="surprise-text">
+            Кохаю тебе безмежно! Твій головний подарунок чекає на тебе... 🎁 (або напишіть тут свій варіант підказки)
+        </div>
+    </div>
+
+    <script>
+        // Дати для розрахунку (місяці в JS рахуються з 0, тому серпень = 7, травень = 4)
+        const startDate = new Date(2020, 7, 22, 0, 0, 0); // 22.08.2020
+        const marriageDate = new Date(2026, 4, 22, 0, 0, 0); // 22.05.2026
+
+        function updateTimers() {
+            const now = new Date();
+
+            // Функція підрахунку різниці
+            function calculateTime(targetDate, isFutureAllowed = false) {
+                let diff = now - targetDate;
+                
+                // Якщо дата весілля ще не настала, показуватиме 0 або зворотний відлік
+                if (diff < 0 && !isFutureAllowed) {
+                    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+                }
+                
+                // Якщо дата в майбутньому (для зворотного відліку, якщо потрібно)
+                diff = Math.abs(diff);
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+
+                return { days, hours, minutes, seconds };
+            }
+
+            // Оновлення першого таймера
+            const rTime = calculateTime(startDate);
+            document.getElementById('r-days').innerText = rTime.days;
+            document.getElementById('r-hours').innerText = rTime.hours;
+            document.getElementById('r-mins').innerText = rTime.minutes;
+            document.getElementById('r-secs').innerText = rTime.seconds;
+
+            // Оновлення другого таймера
+            const mTime = calculateTime(marriageDate);
+            document.getElementById('m-days').innerText = mTime.days;
+            document.getElementById('m-hours').innerText = mTime.hours;
+            document.getElementById('m-mins').innerText = mTime.minutes;
+            document.getElementById('m-secs').innerText = mTime.seconds;
+        }
+
+        // Запуск оновлення щосекунди
+        setInterval(updateTimers, 1000);
+        updateTimers(); // Перший запуск відразу
+
+        function showSurprise() {
+            const text = document.getElementById('surprise-text');
+            text.style.display = text.style.display === 'none' ? 'block' : 'none';
+            if(text.style.display === 'block') {
+                text.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
